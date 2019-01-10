@@ -13,7 +13,7 @@ const LaunchRequestHandler = {
     return handlerInput.responseBuilder
       .speak(speechText)
       .reprompt(speechText)
-      .withSimpleCard('Office Hours', speechText)
+      .withSimpleCard('Pager Karaoke Device', speechText)
       .getResponse();
   },
 };
@@ -25,6 +25,12 @@ const PagerIntentHandler = {
   },
   handle(handlerInput) {
     const speechText = 'This is the pager template!';
+
+    if (!supportsAPL(handlerInput)) {
+      return handlerInput.responseBuilder
+        .speak("This is an echo device without a screen!")
+        .getResponse();
+    }
 
     return handlerInput.responseBuilder
       .speak(speechText)
@@ -70,6 +76,12 @@ const KaraokeIntentHandler = {
   },
   handle(handlerInput) {
     const speechText = 'This is the karaoke template!';
+
+    if (!supportsAPL(handlerInput)) {
+      return handlerInput.responseBuilder
+        .speak("This is an echo device without a screen!")
+        .getResponse();
+    }
 
     return handlerInput.responseBuilder
       .speak(speechText)
@@ -149,6 +161,12 @@ const DeviceIntentHandler = {
       default:
         speechText += "echo device!";
         break;
+    }
+
+    if (!supportsAPL(handlerInput)) {
+      return handlerInput.responseBuilder
+        .speak("This is an echo device without a screen!")
+        .getResponse();
     }
 
     return handlerInput.responseBuilder
@@ -234,6 +252,13 @@ const ErrorHandler = {
       .getResponse();
   },
 };
+
+function supportsAPL(handlerInput) {
+  const supportedInterfaces = handlerInput.requestEnvelope.context.System.device.supportedInterfaces;
+  const aplInterface = supportedInterfaces['Alexa.Presentation.APL'];
+  return aplInterface != null && aplInterface != undefined;
+}
+
 
 const skillBuilder = Alexa.SkillBuilders.custom();
 

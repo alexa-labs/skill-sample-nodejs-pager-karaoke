@@ -9,7 +9,7 @@
             "Alexa tell hello world hello",
             "Alexa ask hello world say hello"
           ],
-          "name": "Office Hours Skill",
+          "name": "Pager Karaoke Device Skill",
           "description": "Sample Full Description"
         }
       },
@@ -25,7 +25,9 @@
         },
         "interfaces": [
           {
-            "type": "ALEXA_PRESENTATION_APL"
+            "type" : "RENDER_TEMPLATE",
+            "minimumApmlVersion": "1.0",
+            "minimumTemplateVersion": "1.0"
           }
         ]
       }
