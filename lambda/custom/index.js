@@ -1,3 +1,4 @@
+/* eslint-disable global-require */
 /* eslint-disable  func-names */
 /* eslint-disable  no-console */
 
@@ -28,7 +29,7 @@ const PagerIntentHandler = {
 
     if (!supportsAPL(handlerInput)) {
       return handlerInput.responseBuilder
-        .speak("This is an echo device without a screen!")
+        .speak('This is an echo device without a screen!')
         .getResponse();
     }
 
@@ -40,30 +41,30 @@ const PagerIntentHandler = {
         version: '1.0',
         document: require('./pager.json'),
         datasources: {
-            "pagerTemplateData": {
-                "type": "object",
-                "properties": {
-                    "hintString" : "try the blue cheese!"
-                },
-                "transformers": [
-                    {
-                        "inputPath": "hintString",
-                        "transformer": "textToHint"
-                    }
-                ]
-            }
-        }
+          'pagerTemplateData': {
+            'type': 'object',
+            'properties': {
+              'hintString': 'try the blue cheese!',
+            },
+            'transformers': [
+              {
+                'inputPath': 'hintString',
+                'transformer': 'textToHint',
+              },
+            ],
+          },
+        },
       })
       .addDirective({
         type: 'Alexa.Presentation.APL.ExecuteCommands',
         token: 'pagerToken',
         commands: [
           {
-            type: 'AutoPage',
-            componentId: 'pagerComponentId',
-            "duration": 5000
-          }
-        ]
+            'type': 'AutoPage',
+            'componentId': 'pagerComponentId',
+            'duration': 5000,
+          },
+        ],
       })
       .getResponse();
   },
@@ -79,7 +80,7 @@ const KaraokeIntentHandler = {
 
     if (!supportsAPL(handlerInput)) {
       return handlerInput.responseBuilder
-        .speak("This is an echo device without a screen!")
+        .speak('This is an echo device without a screen!')
         .getResponse();
     }
 
@@ -91,31 +92,31 @@ const KaraokeIntentHandler = {
         version: '1.0',
         document: require('./karaoke.json'),
         datasources: {
-            "karaokeTemplateData": {
-                "type": "object",
-                "objectId": "karaokeSample",
-                "properties": {
-                    "karaokeSsml": "<speak>We’re excited to announce a new video training series from A Cloud Guru on Alexa skill development. The free training series called Alexa Devs walks new developers and non-developers through how to build Alexa skills from start to finish. You’ll also learn how to enhance your skill using persistence, Speechcons, and SSML to create more engaging voice experiences for customers. Check out the first episode on how to build your first Alexa skill here.</speak>",
-                    "hintString" : "try the blue cheese!"
-                },
-                "transformers": [
-                    {
-                        "inputPath": "karaokeSsml",
-                        "outputName": "karaokeSpeech",
-                        "transformer": "ssmlToSpeech"
-                    },
-                    {
-                        "inputPath": "karaokeSsml",
-                        "outputName": "karaokeText",
-                        "transformer": "ssmlToText"
-                    },
-                    {
-                        "inputPath": "hintString",
-                        "transformer": "textToHint"
-                    }
-                ]
-            }
-        } 
+          'karaokeTemplateData': {
+            'type': 'object',
+            'objectId': 'karaokeSample',
+            'properties': {
+              'karaokeSsml': '<speak>We’re excited to announce a new video training series from A Cloud Guru on Alexa skill development. The free training series called Alexa Devs walks new developers and non-developers through how to build Alexa skills from start to finish. You’ll also learn how to enhance your skill using persistence, Speechcons, and SSML to create more engaging voice experiences for customers. Check out the first episode on how to build your first Alexa skill here.</speak>',
+              'hintString': 'try the blue cheese!',
+            },
+            'transformers': [
+              {
+                'inputPath': 'karaokeSsml',
+                'outputName': 'karaokeSpeech',
+                'transformer': 'ssmlToSpeech',
+              },
+              {
+                'inputPath': 'karaokeSsml',
+                'outputName': 'karaokeText',
+                'transformer': 'ssmlToText',
+              },
+              {
+                'inputPath': 'hintString',
+                'transformer': 'textToHint',
+              },
+            ],
+          },
+        },
       })
       .addDirective({
         type: 'Alexa.Presentation.APL.ExecuteCommands',
@@ -124,9 +125,9 @@ const KaraokeIntentHandler = {
           {
             type: 'SpeakItem',
             componentId: 'karaokespeechtext',
-            highlightMode: 'line'
-          }
-        ]
+            highlightMode: 'line',
+          },
+        ],
       })
       .getResponse();
   },
@@ -140,32 +141,32 @@ const DeviceIntentHandler = {
   handle(handlerInput) {
     const viewportProfile = Alexa.getViewportProfile(handlerInput.requestEnvelope);
 
-    let speechText = "This device is a ";
+    let speechText = 'This device is a ';
 
-    switch(viewportProfile) {
-      case "HUB-LANDSCAPE-LARGE":
-        speechText += "hub landscape large";
+    switch (viewportProfile) {
+      case 'HUB-LANDSCAPE-LARGE':
+        speechText += 'hub landscape large';
         break;
-      case "HUB-LANDSCAPE-MEDIUM": 
-        speechText += "hub landscape medium";
+      case 'HUB-LANDSCAPE-MEDIUM':
+        speechText += 'hub landscape medium';
         break;
-      case "HUB-ROUND-SMALL":
-        speechText += "hub round small";
+      case 'HUB-ROUND-SMALL':
+        speechText += 'hub round small';
         break;
-      case "TV-LANDSCAPE-XLARGE":
-        speechText += "tv landscape extra large";
+      case 'TV-LANDSCAPE-XLARGE':
+        speechText += 'tv landscape extra large';
         break;
-      case "MOBILE-LANDSCAPE-SMALL":
-        speechText += "mobile landscape small";
+      case 'MOBILE-LANDSCAPE-SMALL':
+        speechText += 'mobile landscape small';
         break;
       default:
-        speechText += "echo device!";
+        speechText += 'echo device!';
         break;
     }
 
     if (!supportsAPL(handlerInput)) {
       return handlerInput.responseBuilder
-        .speak("This is an echo device without a screen!")
+        .speak('This is an echo device without a screen!')
         .getResponse();
     }
 
@@ -176,21 +177,21 @@ const DeviceIntentHandler = {
         version: '1.0',
         document: require('./devices.json'),
         datasources: {
-            "deviceTemplateData": {
-                "type": "object",
-                "objectId": "deviceSample",
-                "properties": {
-                    "deviceName": viewportProfile,
-                    "hintString" : "try and buy more devices!"
-                },
-                "transformers": [
-                    {
-                        "inputPath": "hintString",
-                        "transformer": "textToHint"
-                    }
-                ]
-            }
-        } 
+          'deviceTemplateData': {
+            'type': 'object',
+            'objectId': 'deviceSample',
+            'properties': {
+              'deviceName': viewportProfile,
+              'hintString': 'try and buy more devices!',
+            },
+            'transformers': [
+              {
+                'inputPath': 'hintString',
+                'transformer': 'textToHint',
+              },
+            ],
+          },
+        },
       })
       .getResponse();
   },
@@ -202,12 +203,12 @@ const HelpIntentHandler = {
       && handlerInput.requestEnvelope.request.intent.name === 'AMAZON.HelpIntent';
   },
   handle(handlerInput) {
-    const speechText = 'You can say hello to me!';
+    const speechText = 'You can say, show me pager, show me karaoke, or show me device information.';
 
     return handlerInput.responseBuilder
       .speak(speechText)
       .reprompt(speechText)
-      .withSimpleCard('Hello World', speechText)
+      .withSimpleCard('Pager Karaoke Device', speechText)
       .getResponse();
   },
 };
@@ -223,7 +224,7 @@ const CancelAndStopIntentHandler = {
 
     return handlerInput.responseBuilder
       .speak(speechText)
-      .withSimpleCard('Hello World', speechText)
+      .withSimpleCard('Pager Karaoke Device', speechText)
       .getResponse();
   },
 };
@@ -256,7 +257,7 @@ const ErrorHandler = {
 function supportsAPL(handlerInput) {
   const supportedInterfaces = handlerInput.requestEnvelope.context.System.device.supportedInterfaces;
   const aplInterface = supportedInterfaces['Alexa.Presentation.APL'];
-  return aplInterface != null && aplInterface != undefined;
+  return aplInterface != null && aplInterface !== undefined;
 }
 
 
@@ -270,7 +271,7 @@ exports.handler = skillBuilder
     KaraokeIntentHandler,
     HelpIntentHandler,
     CancelAndStopIntentHandler,
-    SessionEndedRequestHandler
+    SessionEndedRequestHandler,
   )
   .addErrorHandlers(ErrorHandler)
   .lambda();
