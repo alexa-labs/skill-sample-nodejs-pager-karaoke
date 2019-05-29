@@ -23,8 +23,8 @@
                     "type": "Image",
                     "source": "https://d2o906d8ln7ui1.cloudfront.net/images/BT6_Background.png",
                     "position": "absolute",
-                    "width": "100%",
-                    "height": "100%",
+                    "width": "100vw",
+                    "height": "100vh",
                     "scale": "best-fill"
                 }
             ]
@@ -39,7 +39,8 @@
                 "when": "${@viewportProfile == @tvLandscapeXLarge}",
                 "type": "Container",
                 "direction": "column",
-                "width": "100%",
+                "height": "100vh",
+                "justifyContent": "spaceBetween",
                 "items": [
                     {
                         "type": "BackgroundImage"
@@ -49,7 +50,7 @@
                         "text": "<br>What type of device is this?",
                         "color": "#ffffff",
                         "width": "100%",
-                        "fontSize": 40,
+                        "fontSize": "@fontSizeSmall",
                         "textAlign": "center",
                         "fontWeight": "100",
                         "paddingLeft": 10,
@@ -60,7 +61,7 @@
                         "text": "XLarge landscape TV",
                         "color": "#ffffff",
                         "width": "100%",
-                        "fontSize": 140,
+                        "fontSize":"@fontSizeXXLarge",
                         "textAlign": "center",
                         "paddingLeft": 10,
                         "paddingRight": 10
@@ -75,7 +76,8 @@
                 "when": "${@viewportProfile == @hubRoundSmall}",
                 "type": "Container",
                 "direction": "column",
-                "width": "100%",
+                "height": "100vh",
+                "justifyContent": "spaceBetween",
                 "items": [
                     {
                         "type": "BackgroundImage"
@@ -85,7 +87,7 @@
                         "text": "<br><br><br>What type of device is this?",
                         "color": "#ffffff",
                         "width": "100%",
-                        "fontSize": 30,
+                        "fontSize": "@fontSizeXSmall",
                         "textAlign": "center",
                         "fontWeight": "100",
                         "paddingLeft": 10,
@@ -96,7 +98,7 @@
                         "text": "Small round hub",
                         "color": "#ffffff",
                         "width": "100%",
-                        "fontSize": 80,
+                        "fontSize": "@fontSizeLarge",
                         "textAlign": "center",
                         "paddingLeft": 10,
                         "paddingRight": 10
@@ -111,7 +113,8 @@
                 "when": "${@viewportProfile == @hubLandscapeMedium}",
                 "type": "Container",
                 "direction": "column",
-                "width": "100%",
+                "height": "100vh",
+                "justifyContent": "spaceBetween",
                 "items": [
                     {
                         "type": "BackgroundImage"
@@ -121,7 +124,7 @@
                         "text": "<br>What type of device is this?",
                         "color": "#ffffff",
                         "width": "100%",
-                        "fontSize": 40,
+                        "fontSize": "@fontSizeXSmall",
                         "textAlign": "center",
                         "fontWeight": "100",
                         "paddingLeft": 10,
@@ -132,7 +135,7 @@
                         "text": "Medium landscape hub",
                         "color": "#ffffff",
                         "width": "100%",
-                        "fontSize": 140,
+                        "fontSize": "@fontSizeLarge",
                         "textAlign": "center",
                         "paddingLeft": 10,
                         "paddingRight": 10
@@ -146,7 +149,8 @@
             {
                 "type": "Container",
                 "direction": "column",
-                "width": "100%",
+                "height": "100vh",
+                "justifyContent": "spaceBetween",
                 "items": [
                     {
                         "type": "BackgroundImage"
@@ -156,7 +160,7 @@
                         "text": "<br>What type of device is this?",
                         "color": "#ffffff",
                         "width": "100%",
-                        "fontSize": 40,
+                        "fontSize": "@fontSizeXSmall",
                         "textAlign": "center",
                         "fontWeight": "100",
                         "paddingLeft": 10,
@@ -167,7 +171,7 @@
                         "text": "This is a ${payload.deviceTemplateData.properties.deviceName}",
                         "color": "#ffffff",
                         "width": "100%",
-                        "fontSize": 140,
+                        "fontSize": "@fontSizeLarge",
                         "textAlign": "center",
                         "paddingLeft": 10,
                         "paddingRight": 10

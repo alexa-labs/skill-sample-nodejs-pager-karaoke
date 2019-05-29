@@ -144,6 +144,9 @@ const DeviceIntentHandler = {
     let speechText = 'This device is a ';
 
     switch (viewportProfile) {
+      case 'HUB-LANDSCAPE-SMALL':
+        speechText += 'hub landscape small';
+        break;
       case 'HUB-LANDSCAPE-LARGE':
         speechText += 'hub landscape large';
         break;
