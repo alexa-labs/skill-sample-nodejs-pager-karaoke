@@ -233,7 +233,7 @@
                         },
                         {
                             "type": "AlexaFooter",
-                            "footerHint": "${hint}"
+                            "hintText": "${hint}"
                         }
                     ]
                 }
@@ -314,7 +314,7 @@
                         },
                         {
                             "type": "AlexaFooter",
-                            "footerHint": "${hint}"
+                            "hintText": "${hint}"
                         }
                     ]
                 }
@@ -360,7 +360,7 @@
                         },
                         {
                             "type": "AlexaFooter",
-                            "footerHint": "${hint}"
+                            "hintText": "${hint}"
                         }
                     ]
                 }

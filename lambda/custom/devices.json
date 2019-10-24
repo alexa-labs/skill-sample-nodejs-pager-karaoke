@@ -68,7 +68,7 @@
                     },
                     {
                         "type": "AlexaFooter",
-                        "footerHint": "${payload.deviceTemplateData.properties.hintString}"
+                        "hintText": "${payload.deviceTemplateData.properties.hintString}"
                     }
                 ]
             },
@@ -105,7 +105,7 @@
                     },
                     {
                         "type": "AlexaFooter",
-                        "footerHint": "${payload.deviceTemplateData.properties.hintString}"
+                        "hintText": "${payload.deviceTemplateData.properties.hintString}"
                     }
                 ]
             },
@@ -142,7 +142,7 @@
                     },
                     {
                         "type": "AlexaFooter",
-                        "footerHint": "${payload.deviceTemplateData.properties.hintString}"
+                        "hintText": "${payload.deviceTemplateData.properties.hintString}"
                     }
                 ]
             },
@@ -178,7 +178,7 @@
                     },
                     {
                         "type": "AlexaFooter",
-                        "footerHint": "${payload.deviceTemplateData.properties.hintString}"
+                        "hintText": "${payload.deviceTemplateData.properties.hintString}"
                     }
                 ]
             }

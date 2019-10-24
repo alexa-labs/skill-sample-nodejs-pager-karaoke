@@ -27,13 +27,25 @@
         }
     ],
     "styles": {
+        "karaokeStyle": {
+            "extends": "textStyleKaraoke",
+            "values": [
+                {
+                    "color": "@colorText"
+                },
+                {
+                    "when": "${state.karaoke}",
+                    "color": "blue"
+                }
+            ]
+        },
         "CheeseStyle": {
             "values": [
                 {
                     "fontSize": "@headFontSize",
                     "color": "@roundCheeseColor",
                     "textAlign": "center",
-                    "fontWeight": 300
+                    "fontWeight": "300"
                 }
             ]
         },
@@ -45,7 +57,7 @@
                     "color": "@landscapeCheeseColor",
                     "paddingLeft": "30px",
                     "paddingTop": "30px",
-                    "fontWeight": 100
+                    "fontWeight": "100"
                 }
             ]
         }
@@ -69,7 +81,7 @@
                     "items": [
                         {
                             "type": "Frame",
-                            "height": "95vh",
+                            "height": "100vh",
                             "width": "100vw",
                             "borderWidth": "3px",
                             "borderColor": "#C44D58",
@@ -80,7 +92,9 @@
                                     "type": "Text",
                                     "text": "${title}",
                                     "style": "CheeseStyle",
-                                    "paddingTop": "5vh"
+                                    "textAlign": "center",
+                                    "paddingTop": "5vh",
+                                    "width": "100vw"
                                 }
                             ]
                         }
@@ -123,18 +137,17 @@
                         "item": [
                             {
                                 "type": "Text",
-                                "id": "karaokecomponent",
+                                "id": "karaokespeechtext",
                                 "text": "${payload.karaokeTemplateData.properties.karaokeText}",
                                 "speech": "${payload.karaokeTemplateData.properties.karaokeSpeech}",
-                                "fontSize": "55px",
-                                "color": "#ffffff",
-                                "width": "90vw",
-                                "paddingTop": "30px",
-                                "paddingLeft": "30px",
-                                "paddingRight": "30px",
-                                "fontWeight": 300
+                                "style": "karaokeStyle",
+                                "paddingLeft": "5vw",
+                                "paddingRight": "5vw",
+                                "paddingBottom": "50vh",
+                                "textAlign": "center"
                             }
-                        ]
+                        ],
+                        "grow": 1
                     }
                 ]
             },
@@ -159,7 +172,7 @@
                     {
                         "type": "ScrollView",
                         "width": "100vw",
-                        "height": "100vh",
+                        "height": "30vh",
                         "items": [
                             {
                                 "type": "Text",
@@ -167,16 +180,17 @@
                                 "text": "${payload.karaokeTemplateData.properties.karaokeText}",
                                 "speech": "${payload.karaokeTemplateData.properties.karaokeSpeech}",
                                 "fontSize": "55px",
-                                "color": "#ffffff",
+                                "style": "karaokeStyle",
                                 "paddingLeft": "30px",
                                 "paddingTop": "30px",
-                                "fontWeight": 300
+                                "fontWeight": "300"
                             }
-                        ]
+                        ],
+                        "grow": 1
                     },
                     {
                         "type": "AlexaFooter",
-                        "footerHint": "${payload.karaokeTemplateData.properties.hintString}"
+                        "hintText": "${payload.karaokeTemplateData.properties.hintString}"
                     }
                 ]
             }
