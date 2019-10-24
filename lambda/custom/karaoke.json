@@ -27,6 +27,17 @@
         }
     ],
     "styles": {
+        "karaokeStyle": {
+            "values": [
+                {
+                    "color": "@colorText"
+                },
+                {
+                    "when": "${state.karaokeTarget}",
+                    "color": "blue"
+                }
+            ]
+        },
         "CheeseStyle": {
             "values": [
                 {
@@ -127,7 +138,7 @@
                                 "text": "${payload.karaokeTemplateData.properties.karaokeText}",
                                 "speech": "${payload.karaokeTemplateData.properties.karaokeSpeech}",
                                 "fontSize": "55px",
-                                "color": "#ffffff",
+                                "style": "karaokeStyle",
                                 "width": "90vw",
                                 "paddingTop": "30px",
                                 "paddingLeft": "30px",
@@ -167,7 +178,7 @@
                                 "text": "${payload.karaokeTemplateData.properties.karaokeText}",
                                 "speech": "${payload.karaokeTemplateData.properties.karaokeSpeech}",
                                 "fontSize": "55px",
-                                "color": "#ffffff",
+                                "style": "karaokeStyle",
                                 "paddingLeft": "30px",
                                 "paddingTop": "30px",
                                 "fontWeight": 300
