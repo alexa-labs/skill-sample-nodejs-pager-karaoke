@@ -176,7 +176,7 @@
                     },
                     {
                         "type": "AlexaFooter",
-                        "footerHint": "${payload.karaokeTemplateData.properties.hintString}"
+                        "hintText": "${payload.karaokeTemplateData.properties.hintString}"
                     }
                 ]
             }
